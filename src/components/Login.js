@@ -53,7 +53,7 @@ const Login = () => {
             {
                localStorage.setItem("usersdatatoken",res.result.token)
               // setInpval({...inpval,email:"",password:"" })
-              history("/dashboard")
+              history("/tasks")
             }
             else{
               alert("Invalid user")

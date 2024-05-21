@@ -1,7 +1,7 @@
  
  import Login from './components/Login';
  import Register from './components/Register';
- import Dashboard from './components/Dashboard';
+import TaskList from './components/TaskList';
 import './App.css';
  
 import {Route,Routes} from 'react-router-dom'
@@ -11,7 +11,7 @@ function App() {
        <Routes>
         <Route path='/' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
-        <Route path='/dashboard' element={<Dashboard/>}/> 
+        <Route path='/tasks' element={<TaskList/>} />
        </Routes>
     </div>
   );
