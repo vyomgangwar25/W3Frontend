@@ -45,26 +45,26 @@ const Register = () => {
     } else if (password !== cpassword) {
       alert("pass and Cpass are not matching!");
     } else {
-      // console.log("registration done ");
+      console.log("registration done ");
        
-    //     const data = await fetch("http://localhost:7000/register", {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json"
-    //       },
-    //       body: JSON.stringify({
-    //         fname, email, password, cpassword
-    //       })
-    //     });
+        const data = await fetch("http://localhost:7000/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            fname, email, password, cpassword
+          })
+        });
       
-    //    const res = await data.json();
-    //   //console.log("Response:", res);
-    //   if(res.status === 201)
-    //   {
-    //     alert("User Successfully Registered");
-    //     setInpval({...inpval,fname:"",email:"",password:"",cpassword:""})
-    //     history("/")
-    //   }
+       const res = await data.json();
+      //console.log("Response:", res);
+      if(res.status === 201)
+      {
+        alert("User Successfully Registered");
+        setInpval({...inpval,fname:"",email:"",password:"",cpassword:""})
+        history("/")
+      }
       }  
       
       
