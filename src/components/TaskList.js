@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate instead of useHistory
-
+import { useNavigate } from 'react-router-dom'; 
 function TaskList() {
   const [tasks, setTasks] = useState([]);
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const navigate = useNavigate(); // Use useNavigate hook
+  const navigate = useNavigate();  
 
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const token = localStorage.getItem('token');
-        const response = await fetch('/tasks', {
+        const token = localStorage.getItem('usersdatatoken');
+        const response = await fetch('http://localhost:7000/tasks', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -57,8 +56,8 @@ function TaskList() {
 
   const handleDeleteTask = async (id) => {
     try {
-      const token = localStorage.getItem('token');
-      const response = await fetch(`/tasks/${id}`, {
+      const token = localStorage.getItem('usersdatatoken');
+      const response = await fetch(`http://localhost:7000/tasks/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`

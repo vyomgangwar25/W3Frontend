@@ -15,7 +15,7 @@ const Register = () => {
 
   const setval = (e) => {
     const { name, value } = e.target;
-    // console.log(name,value);
+  
     setInpval(() => {
       return {
         ...inpval,
@@ -58,7 +58,7 @@ const Register = () => {
         });
       
        const res = await data.json();
-      //console.log("Response:", res);
+      
       if(res.status === 201)
       {
         alert("User Successfully Registered");
